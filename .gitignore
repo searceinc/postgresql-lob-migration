@@ -1,0 +1,9 @@
+#ignore log file
+logs/event.log
+logs/setup.log
+
+#ignore virtual environment
+venv
+
+#ignore python cache
+__pycache__

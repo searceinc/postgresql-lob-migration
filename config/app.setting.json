@@ -1,0 +1,36 @@
+{
+    "App": {
+        "MinPoolSize": 2,
+        "PoolSize": 10,
+        "WorkerPool": 6,
+        "PreviousExecFlags": "tmp/execOID",
+        "SkipTable": [
+            "public___pg_buffercache"
+        ]
+    },
+    "Database": {
+        "KeepAliveKWARGS": {
+            "keepalives": 1,
+            "keepalives_idle": 30,
+            "keepalives_interval": 5,
+            "keepalives_count": 5
+        },
+        "Source": {
+            "Host": "",
+            "Port": 5432,
+            "Username": "",
+            "Password": "",
+            "Database": ""
+        },
+        "Destination": {
+            "Host": "",
+            "Port": 5432,
+            "Username": "",
+            "Password": "",
+            "Database": ""
+        }
+    },
+    "Query" : {
+        "FetchTableSchema" : "select DISTINCT ON (table_schema, table_name) table_schema, table_name from information_schema.columns where table_schema not in ('information_schema', 'pg_catalog','pglogical') and data_type in ('oid');"
+    }
+}
